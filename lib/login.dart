@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:microsite/beranda.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:microsite/components/new_dropdown.dart';
 import 'package:microsite/constant.dart';
 import 'package:microsite/menu_utama.dart';
@@ -114,6 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void initState() {
     super.initState();
     getPref();
+    _initPackageInfo();
   }
 
   @override
@@ -915,7 +917,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               SizedBox(height: size.height * 0.05),
                               Text(
-                                "Version 1.0.3",
+                                "Version ${getVersion}",
                                 style: TextStyle(
                                     fontWeight: FontWeight.normal,
                                     fontFamily: "SF",
@@ -967,5 +969,12 @@ class _LoginScreenState extends State<LoginScreen> {
         content: Text(msg),
       ),
     );
+  }
+
+  Future<void> _initPackageInfo() async {
+    final info = await PackageInfo.fromPlatform();
+    setState(() {
+      getVersion = info.version;
+    });
   }
 }

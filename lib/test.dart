@@ -1850,7 +1850,6 @@ class _BerandaState extends State<Beranda> {
                           print(namagadisibuCadebController);
                           print(subdistrict_value);
                           print(district_value);
-                          print(base64Image);
                           print(city_value);
                           print(input_nilai_tipe);
                           print(myNomorhpsalesController.text);
@@ -1870,6 +1869,7 @@ class _BerandaState extends State<Beranda> {
                           print(asset_name);
                           print(brch_code);
                           print(Tenor);
+                          print(installmentypecategory);
                           // if (_formKey.currentState!.validate()) {
                           //   // calculateAllData(context);
                           // }
@@ -1998,7 +1998,7 @@ class _BerandaState extends State<Beranda> {
           "username": usr_name,
           "brandCode": nilai_ab,
           "assetName": asset_name,
-          "branch_Code": brch_code,
+          "branch_code": brch_code,
           "installmentPeriod": Tenor,
           "installmentType": installmentypecategory
         }),

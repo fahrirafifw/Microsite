@@ -718,6 +718,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           key: _formKey,
                           child: Column(
                             children: [
+                              SizedBox(height: size.height * 0.03),
+                              Image.asset(
+                                "assets/images/brif.png",
+                                height: size.height * 0.2,
+                              ),
                               RoundedInputField(
                                 hintText: "Username",
                                 onChanged: (value) {},
@@ -910,7 +915,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               SizedBox(height: size.height * 0.05),
                               Text(
-                                "Version 1.0.2",
+                                "Version 1.0.3",
                                 style: TextStyle(
                                     fontWeight: FontWeight.normal,
                                     fontFamily: "SF",
